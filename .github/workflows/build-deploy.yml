@@ -65,6 +65,7 @@ jobs:
         cd ./vendor/github.com/dabit3/polygon-ethereum-nextjs-marketplace
         sed -i "s+nft-dashboard-template+https://${GITHUB_REPOSITORY_OWNER}.github.io/$(basename `git rev-parse --show-toplevel`)/marketplace+g" ./pages/resell-nft.js
         sed -i "s+/marketplace+/${GITHUB_REPOSITORY_OWNER}.github.io/$(basename `git rev-parse --show-toplevel`)/marketplace/+g" ./next.config.js
+        cat ./next.config.js
         npm prune
         yarn
         npx hardhat compile
