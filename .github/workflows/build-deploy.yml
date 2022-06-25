@@ -118,3 +118,15 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build
+
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "TIMESTAMP=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+      - uses: valist-io/valist-github-action@v2.2.0
+        with:
+          private-key: ${{ secrets.PRIVATE_KEY }}
+          account: w3b-glass
+          project: tiles
+          release: ${{ env.TIMESTAMP }}
+          files: '**'
