@@ -33,6 +33,26 @@ jobs:
       run: |
         cp -vr "vendor/github.com/codrops/DragDropInteractions" "build/"
 
+    - name: Install Node.js v16
+      uses: actions/setup-node@v1
+      with:
+        node-version: 16.x
+
+    - name: Build polygon-ethereum-nextjs-marketplace
+      shell: /bin/bash -e {0}
+      run: |
+        cd ./vendor/github.com/dabit3/polygon-ethereum-nextjs-marketplace
+        npm prune
+        yarn
+        npx hardhat compile
+        npm run build
+        find .
+
+    - name: Copy polygon-ethereum-nextjs-marketplace
+      shell: /bin/bash -e {0}
+      run: |
+        cp -vr "./vendor/github.com/dabit3/polygon-ethereum-nextjs-marketplace/out" "build/marketplace"
+
     - name: Copy Ventus
       shell: /bin/bash -e {0}
       run: |
