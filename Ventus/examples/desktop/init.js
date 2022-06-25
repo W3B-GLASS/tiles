@@ -7,7 +7,7 @@ function doSomethingLater() {
 	const w3b_store = "https://W3B-GLASS.github.io/tiles/marketplace/#Web3 Stor3-Apps-Add An App-Your Apps-Dashboard-App-0x94F4a38726570f41693CD1aC9DefFab22AF819b4";
         document.getElementById("w3b_stor3").src = w3b_store;
 
-	const w3b_seed = "https://W3B-GLASS.github.io/tiles/marketplace/#S33d Fund-Campains-Add A Campain-Your Campainss-Dashboard-Campain-0x82f0C2EaA252B65416210F309Ac48B5a749fa5d5";
+	const w3b_seed = "https://W3B-GLASS.github.io/tiles/marketplace/#S33d Fund-Campaign-Add A Campaign-Your Campaign-Dashboard-Campaign-0x82f0C2EaA252B65416210F309Ac48B5a749fa5d5";
         document.getElementById("w3b_s33d_fund").src = w3b_seed;
 
 	if(window.location.href.indexOf("#") != -1)  {  
