@@ -78,7 +78,7 @@ jobs:
         egrep --color -r resell-nft .
         for file in `grep -l -r "/_next"`; do
           echo "update file: $file"
-          sed -i "s+/_next/+_next/+g" $file
+          #sed -i "s+/_next/+_next/+g" $file
         done
 
     - name: Copy polygon-ethereum-nextjs-marketplace
