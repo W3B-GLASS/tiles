@@ -73,6 +73,7 @@ jobs:
       shell: /bin/bash -e {0}
       run: |
         cd ./vendor/github.com/dabit3/polygon-ethereum-nextjs-marketplace
+	grep -l -r resell-nft
         for file in `grep -l -r "/_next"`; do
           echo "update file: $file"
           sed -i "s+/_next/+_next/+g" $file
