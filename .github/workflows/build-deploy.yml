@@ -46,6 +46,7 @@ jobs:
         yarn
         npx hardhat compile
         npm run build
+        ls -la out
 
     - name: Copy polygon-ethereum-nextjs-marketplace
       shell: /bin/bash -e {0}
