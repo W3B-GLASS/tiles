@@ -1,7 +1,7 @@
 
 
 function doSomethingLater() {
-	const w3b_bio = encodeURIComponent("nft-dashboard-template/#Web3 Bio-Links-Add A Link-Your Links-0xb745845A511fF4D328D534c59A6eBb547a57D9B0");
+	const w3b_bio = encodeURIComponent("nft-dashboard-template/#Web3 Bio-Links-Add A Link-Your Links-Bio-0xb745845A511fF4D328D534c59A6eBb547a57D9B0");
         document.getElementById("w3b_bio").src = "nft-dashboard-template/"+encodeURI(w3b_bio);
 
 	if(window.location.href.indexOf("#") != -1)  {  

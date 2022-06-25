@@ -6,6 +6,8 @@ if (document.getElementById("title") && window.location.hash) {
   document.getElementById("sell").innerText = decodeURI(window.location.hash.split("-")[2]);
   document.getElementById("my").innerText = decodeURI(window.location.hash.split("-")[3]);
   document.getElementById("dashboard").innerText = decodeURI(window.location.hash.split("-")[4]);
+
+  document.getElementById("assetName").innerText = decodeURI(window.location.hash.split("-")[5]);
 }
 
 document.onselectionchange = function() {
