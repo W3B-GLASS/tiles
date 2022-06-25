@@ -12,19 +12,19 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-    
+
     - name: Install Node.js
       uses: actions/setup-node@v1
       with:
         node-version: 13.x
-    
+
     - name: Install NPM packages
       run: npm ci
-    
+
     - name: Build project
       run: npm run build
 
@@ -38,6 +38,27 @@ jobs:
       with:
         node-version: 16.x
 
+    - name: Build lens-protocol-frontend
+      shell: /bin/bash -e {0}
+      run: |
+        cd ./vendor/github.com/dabit3/lens-protocol-frontend
+        yarn
+        yarn build
+
+    - name: Fix next.js absolute paths
+      shell: /bin/bash -e {0}
+      run: |
+        cd ./vendor/github.com/dabit3/lens-protocol-frontend
+        for file in `grep -l -r "/_next"`; do
+          echo "update file: $file"
+          sed -i "s+/_next/+_next/+g" $file
+        done
+
+    - name: Copy lens-protocol-frontend
+      shell: /bin/bash -e {0}
+      run: |
+        cp -vr "./vendor/github.com/dabit3/lens-protocol-frontend/out" "build/lens-protocol-frontend"
+
     - name: Build polygon-ethereum-nextjs-marketplace
       shell: /bin/bash -e {0}
       run: |
@@ -46,7 +67,15 @@ jobs:
         yarn
         npx hardhat compile
         npm run build
-        find .
+
+    - name: Fix next.js absolute paths
+      shell: /bin/bash -e {0}
+      run: |
+        cd ./vendor/github.com/dabit3/polygon-ethereum-nextjs-marketplace
+        for file in `grep -l -r "/_next"`; do
+          echo "update file: $file"
+          sed -i "s+/_next/+_next/+g" $file
+        done
 
     - name: Copy polygon-ethereum-nextjs-marketplace
       shell: /bin/bash -e {0}
@@ -61,6 +90,7 @@ jobs:
         cp -vr "./vendor/github.com/rlamana/Ventus/examples" "./build/Ventus/"
         mv ./build/index.html ./build/covalent.html
         sed -i "s+nft-dashboard-template+https://${GITHUB_REPOSITORY_OWNER}.github.io/$(basename `git rev-parse --show-toplevel`)/marketplace+g" ./build/glass.html
+        sed -i "s+nft-dashboard-template+https://${GITHUB_REPOSITORY_OWNER}.github.io/$(basename `git rev-parse --show-toplevel`)/marketplace+g" ./build/Ventus/examples/desktop/init.js
         mv ./build/glass.html ./build/index.html
 
     - name: Upload production-ready build files
@@ -68,13 +98,13 @@ jobs:
       with:
         name: production-files
         path: ./build
-  
+
   deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    
+
     steps:
     - name: Download artifact
       uses: actions/download-artifact@v2
