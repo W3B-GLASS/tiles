@@ -28,6 +28,11 @@ jobs:
     - name: Build project
       run: npm run build
 
+    - name: Copy DragDropInteractions
+      shell: /bin/bash -e {0}
+      run: |
+        cp -vr "vendor/github.com/codrops/DragDropInteractions" "build/"
+
     - name: Copy Ventus
       shell: /bin/bash -e {0}
       run: |
