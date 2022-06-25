@@ -63,6 +63,10 @@ export default function CreateItem() {
   }
 
   async function onChange(e) {
+    alert("I've been loaded");
+  }
+
+  async function onChange(e) {
     const file = e.target.files[0]
     console.log("!!!!! onChange going to call client.add")
     try {
@@ -123,17 +127,18 @@ export default function CreateItem() {
     <div className="flex justify-center">
       <div className="w-1/2 flex flex-col pb-12">
         <input id="assetName"
-          placeholder="Asset Name"
+          placeholder="Name"
           className="mt-8 border rounded p-4"
           onChange={e => updateFormInput({ ...formInput, name: e.target.value })}
+          onload={onload}
         />
         <textarea id="assetDescription"
-          placeholder="Asset Description"
+          placeholder="Description"
           className="mt-2 border rounded p-4"
           onChange={e => updateFormInput({ ...formInput, description: e.target.value })}
         />
         <input id="assetPrice"
-          placeholder="Asset Price in Eth"
+          placeholder="Price in Matic"
           className="mt-2 border rounded p-4"
           onChange={e => updateFormInput({ ...formInput, price: e.target.value })}
         />
