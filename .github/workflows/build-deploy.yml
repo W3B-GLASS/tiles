@@ -28,6 +28,14 @@ jobs:
     - name: Build project
       run: npm run build
 
+    - name: Copy Ventus
+      shell: /bin/bash -e {0}
+      run: |
+        mkdir -p ./build/Ventus
+        cp -vr "./vendor/github.com/rlamana/Ventus/dist" "./build/Ventus/"
+        cp -vr "./vendor/github.com/rlamana/Ventus/examples" "./build/Ventus/"
+        mv ./build/index.html ./build/covalent.html
+
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v2
       with:
