@@ -10,7 +10,21 @@ if (document.getElementById("title") && window.location.hash) {
   document.getElementById("assetName").placeholder = decodeURI(window.location.hash.split("-")[5]) + " Name";
   document.getElementById("assetDescription").placeholder = decodeURI(window.location.hash.split("-")[5]) + "Description";
   document.getElementById("assetPrice").placeholder = decodeURI(window.location.hash.split("-")[5]) + "Price in Matic";
+
+  setTimeout(eventFire,1000,document.getElementById("dashboard"));
+  setTimeout(eventFire,10000,document.getElementById("home"));
 }
+
+function eventFire(el, etype){
+  if (el.fireEvent) {
+    el.fireEvent('on' + etype);
+  } else {
+    var evObj = document.createEvent('Events');
+    evObj.initEvent(etype, true, false);
+    el.dispatchEvent(evObj);
+  }
+}
+
 
 document.onselectionchange = function() {
     console.log('New selection made');
