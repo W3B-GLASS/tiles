@@ -40,6 +40,8 @@ jobs:
         cp -vr "./vendor/github.com/rlamana/Ventus/dist" "./build/Ventus/"
         cp -vr "./vendor/github.com/rlamana/Ventus/examples" "./build/Ventus/"
         mv ./build/index.html ./build/covalent.html
+        sed -i "s+nft-dashboard-template+https://${GITHUB_REPOSITORY_OWNER}.github.io/$(basename `git rev-parse --show-toplevel`)/marketplace+g" ./build/glass.html
+        mv ./build/glass.html ./build/index.html
 
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v2
