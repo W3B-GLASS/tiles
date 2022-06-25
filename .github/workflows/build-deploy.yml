@@ -63,6 +63,7 @@ jobs:
       shell: /bin/bash -e {0}
       run: |
         cd ./vendor/github.com/dabit3/polygon-ethereum-nextjs-marketplace
+        sed -i "s+nft-dashboard-template+https://${GITHUB_REPOSITORY_OWNER}.github.io/$(basename `git rev-parse --show-toplevel`)/marketplace+g" ./pages/resell-nft.js
         npm prune
         yarn
         npx hardhat compile
@@ -72,7 +73,6 @@ jobs:
       shell: /bin/bash -e {0}
       run: |
         cd ./vendor/github.com/dabit3/polygon-ethereum-nextjs-marketplace
-        sed -i "s+nft-dashboard-template+https://${GITHUB_REPOSITORY_OWNER}.github.io/$(basename `git rev-parse --show-toplevel`)/marketplace+g" ./pages/resell-nft.js
         for file in `grep -l -r "/_next"`; do
           echo "update file: $file"
           sed -i "s+/_next/+_next/+g" $file
