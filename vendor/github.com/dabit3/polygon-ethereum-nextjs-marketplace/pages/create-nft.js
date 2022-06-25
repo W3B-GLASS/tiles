@@ -130,7 +130,6 @@ export default function CreateItem() {
           placeholder="Name"
           className="mt-8 border rounded p-4"
           onChange={e => updateFormInput({ ...formInput, name: e.target.value })}
-          onload={onload}
         />
         <textarea id="assetDescription"
           placeholder="Description"
