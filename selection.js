@@ -1,13 +1,9 @@
   
-function eventFire(el, etype){
-  console.log("Going to fire click "+etype);
-  if (el.fireEvent) {
-    el.fireEvent('on' + etype);
-  } else {
-    var evObj = document.createEvent('Events');
-    evObj.initEvent(etype, true, false);
-    el.dispatchEvent(evObj);
-  }
+function clickAnchorTag(a) {
+    console.log("Going to click button");
+    var event = document.createEvent('MouseEvent');
+    event = new CustomEvent('click');
+    a.dispatchEvent(event);
 }
 
 if (document.getElementById("title") && window.location.hash) {
@@ -21,8 +17,7 @@ if (document.getElementById("title") && window.location.hash) {
   document.getElementById("assetDescription").placeholder = decodeURI(window.location.hash.split("-")[5]) + "Description";
   document.getElementById("assetPrice").placeholder = decodeURI(window.location.hash.split("-")[5]) + "Price in Matic";
 
-  eventFire(document.getElementById("dashboard"),'click');
-  setTimeout(eventFire,10000,document.getElementById("home"),'click');
+  clickAnchorTag(document.getElementById("dashboard"));
 }
 
 
