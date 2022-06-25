@@ -2,7 +2,7 @@
 
 function doSomethingLater() {
 	const w3b_bio = encodeURIComponent("https://W3B-GLASS.github.io/tiles/marketplace/#Web3 Bio-Links-Add A Link-Your Links-Bio-0xb745845A511fF4D328D534c59A6eBb547a57D9B0");
-        document.getElementById("w3b_bio").src = "https://W3B-GLASS.github.io/tiles/marketplace/"+encodeURI(w3b_bio);
+        document.getElementById("w3b_bio").src = encodeURI(w3b_bio);
 
 	if(window.location.href.indexOf("#") != -1)  {  
 	  //alert("Going to hide background");
