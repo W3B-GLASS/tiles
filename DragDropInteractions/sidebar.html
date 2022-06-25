@@ -4,11 +4,11 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<base href="w3b-glass.github.io/tiles/DragDropInteractions/"></base>
+		<!--base href="https://playaml.github.io/nft-dashboard-template/DragDropInteractions/"></basei-->
+		<base href="https://playagame.today/nft-dashboard-template/DragDropInteractions/"></base>
 		<title>Drag and Drop Interaction Ideas | Sidebar</title>
 		<meta name="description" content="Inspiration for drag and drop interactions for the modern UI" />
 		<meta name="keywords" content="drag and drop, interaction, inspiration, web design, ui" />
-		<meta name="author" content="Codrops" />
 		<link rel="shortcut icon" href="../favicon.ico">
 		<link rel="stylesheet"  href="css/normalize.css" />
 		<link rel="stylesheet"  href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
@@ -52,6 +52,7 @@
 		document.getElementById("modal_title").innerText = "Network Change";
 		document.getElementById("logo").src = "ethereum-eth-logo.svg";
                 showModal();
+		//alert("At this time we only support the Oasis testnet (Emerald)");
 	      } else
 		parent.postMessage({ event: "network", id: newNetwork.chainId}, "*");
               
@@ -72,6 +73,7 @@
 	<script>
 	/* lastTarget is set first on dragenter, then
 	   compared with during dragleave. */
+	//alert("test Dragenter v1.7");
 	function handleFiles(files) {
 
 	    for (var i = 0; i < files.length; i++) {
@@ -329,6 +331,45 @@
 						ctx.scale(.66, .66);
                                                 ctx.putImageData(event.data, 0, 0);
  					        marketFrame.contentWindow.onDrop(event);
+					}
+					else {
+						if (event.data == "step5") {
+						    node = document.getElementById("g1");
+						    var clickEvent = document.createEvent ('MouseEvents');
+						    clickEvent.initEvent ("mousedown", true, true);
+						    node.dispatchEvent (clickEvent);
+						}
+						else
+						{
+						    var provider_list = document.getElementById("providers");
+						    var provider = document.getElementById(event.data);
+						    if (provider) {
+							// update provider
+						    }
+						    else
+						    {  
+                                                      if (typeof event.data === 'string') {
+							console.log("Adding new item");
+							// <div class="drop-area__item"><br>128M<br><br>$4.10/Month<br><i class="fa fa-desktop fa-5x"></i><div class="dummy"></div></div>
+							var new_provider = document.createElement("div");
+							var att = document.createAttribute("class");
+							att.value = "drop-area__item";
+							new_provider.setAttributeNode(att);
+							var mem = parseInt(event.data.split('-')[3]) * 128;
+							var price = (parseInt(event.data.split('-')[2]) * 20) / 100 ;
+							new_provider.innerHTML='<br>'+mem+'M<br><br>$'+price+'/Month<br><i class="fa fa-desktop fa-5x"></i><div class="dummy"></div>';
+							//var br = document.createElement("br");
+							//new_provider.prepend(br);
+							//new_provider.append = '4096M';
+							//new_provider.append(br);
+							//new_provider.append(br);
+							//new_provider.append = '$4.50/Month';
+							provider_list.prepend(new_provider);
+							console.log("Added new item memory "+mem+" at $ "+price);
+						      }
+						    }
+
+						}
 					}
 				});
 
