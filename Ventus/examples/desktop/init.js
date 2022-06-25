@@ -8,7 +8,7 @@ function doSomethingLater() {
         document.getElementById("w3b_stor3").src = w3b_store;
 
 	const w3b_seed = "https://W3B-GLASS.github.io/tiles/marketplace/#S33d Fund-Campaign-Add A Campaign-Your Campaign-Dashboard-Campaign-0x82f0C2EaA252B65416210F309Ac48B5a749fa5d5";
-        document.getElementById("w3b_s33d_fund").src = w3b_seed;
+        document.getElementById("w3b_s33d_fund").src = w3b_seed + "/dashboard";
 
 	if(window.location.href.indexOf("#") != -1)  {  
 	  //alert("Going to hide background");
