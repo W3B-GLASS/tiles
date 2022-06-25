@@ -44,8 +44,10 @@ export default function Home() {
     //const provider = new ethers.providers.JsonRpcProvider()
     //const provider = new ethers.providers.Web3Provider(window.ethereum)
 
-    if (window.location.hash)
-      window.location.hash.split("-")[5] ? marketplaceAddress = window.location.hash.split("-")[5] : true;
+    if (window.location.hash) {
+      window.location.hash.split("-")[6] ? marketplaceAddress = window.location.hash.split("-")[6] : true;
+      alert("contract: " + marketplaceAddress);
+    }
 
     const contract = new ethers.Contract(marketplaceAddress, NFTMarketplace.abi, provider)
     const data = await contract.fetchMarketItems()
