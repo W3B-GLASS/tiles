@@ -12,22 +12,22 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
+    
     - name: Install Node.js
       uses: actions/setup-node@v1
       with:
         node-version: 13.x
-
+    
     - name: Install NPM packages
       run: npm ci
-
+    
     - name: Build project
       run: npm run build
-
+    
     - name: Copy DragDropInteractions
       shell: /bin/bash -e {0}
       run: |
@@ -58,7 +58,7 @@ jobs:
       shell: /bin/bash -e {0}
       run: |
         cp -vr "./vendor/github.com/dabit3/lens-protocol-frontend/out" "build/lens-protocol-frontend"
-
+   
     - name: Build polygon-ethereum-nextjs-marketplace
       shell: /bin/bash -e {0}
       run: |
@@ -98,13 +98,13 @@ jobs:
       with:
         name: production-files
         path: ./build
-
+  
   deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-
+    
     steps:
     - name: Download artifact
       uses: actions/download-artifact@v2

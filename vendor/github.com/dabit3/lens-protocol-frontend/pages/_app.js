@@ -79,7 +79,7 @@ function MyApp({ Component, pageProps }) {
             <div className={linkContainerStyle}>
               <Link href='/'>
                 <a>
-                  <img src="/icon.svg" className={iconStyle} />
+                  <img src="icon.svg" className={iconStyle} />
                 </a>
               </Link>
               <Link href='/'>
@@ -105,7 +105,7 @@ function MyApp({ Component, pageProps }) {
                     className={modalButtonStyle}
                     onClick={() => setIsModalOpen(true)}>
                     <img
-                      src="/create-post.svg"
+                      src="create-post.svg"
                       className={createPostStyle}
                     />
                   </button>

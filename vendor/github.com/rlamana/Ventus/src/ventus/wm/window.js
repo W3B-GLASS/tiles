@@ -49,8 +49,8 @@ function(Emitter, View) {
           <h1 unselectable="on">${options.title}</h1>
           <div class="wm-button-group">
             <button class="wm-minimize">&nbsp;</button>
-            <button class="wm-maximize">&nbsp;</button>
             <button class="wm-close">&nbsp;</button>
+            <button class="wm-maximize">&nbsp;</button>
           </div>
         </header>
 

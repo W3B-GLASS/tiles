@@ -3,7 +3,7 @@ const fs = require('fs');
 // const infuraId = fs.readFileSync(".infuraid").toString().trim() || "";
 
 module.exports = {
-  defaultNetwork: "hardhat",
+  defaultNetwork: "matic",
   networks: {
     hardhat: {
       chainId: 1337
@@ -15,13 +15,14 @@ module.exports = {
       url: "https://rpc-mumbai.matic.today",
       accounts: [process.env.privateKey]
     },
+    */
     matic: {
       // Infura
       // url: `https://polygon-mainnet.infura.io/v3/${infuraId}`,
+      //url: "https://polygon-rpc.com",
       url: "https://rpc-mainnet.maticvigil.com",
-      accounts: [process.env.privateKey]
+      //accounts: [process.env.privateKey]
     }
-    */
   },
   solidity: {
     version: "0.8.4",
