@@ -58,23 +58,7 @@ function doSomethingLater() {
 	    $('#marketplace').contents().find('body').append($('<script>').html(script))
 	}
 
-	if (document.getElementById("buy"))
-	{
-            if (document.location.startsWith("https://your.cmptr.cloud:2017"))
-	    {
-		document.getElementById("buy").setAttribute("src","https://your.cmptr.cloud:2017/v86/app.html?&brad");
-	    }
-	    else
-	    {
-		console.log("DEBUG: "+ document.referrer + " " + document.location);
-		newlocation = document.referrer.replace("firsttime","v86/app");
-		document.getElementById("buy").setAttribute("src",newlocation);
-	    }
-	}
-	else
-	{
 		console.log("!! No element yet "+ document.referrer + " " + document.location);
-	}
 }
 
 setTimeout(doSomethingLater, 1000)
