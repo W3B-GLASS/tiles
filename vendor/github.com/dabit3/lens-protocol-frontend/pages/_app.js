@@ -15,6 +15,8 @@ function MyApp({ Component, pageProps }) {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const router = useRouter()
 
+  route.push('/profiles')
+
   useEffect(() => {
     refreshAuthToken()
     async function checkConnection() {
