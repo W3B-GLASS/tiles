@@ -1,12 +1,11 @@
-# Create Your Custom NFT Collection Dashboard in Minutes
-This code template is designed to get your own customized NFT Collection Dashboard up and running **in just minutes!**.
+# W3B Glass Tiles
+This code template is designed to demonstrate a user interface for Web3
 
-In the `src/config.js`, simply set your:
-- NFT collection contract address
-- Blockchain `chain_id` where the contract address is deployed
-- Dashboard title and banner
+In the `./vendor/github.com/dabit3/polygon-ethereum-nextjs-marketplace/config.js`, simply your contract addresses (they can all be the same)
+- marketplaceAddress = "0x94F4a38726570f41693CD1aC9DefFab22AF819b4"
+- w3b_bio_marketplaceAddress = "0xb745845A511fF4D328D534c59A6eBb547a57D9B0"
+- s33d_fund_marketplaceAddress = "0x82f0C2EaA252B65416210F309Ac48B5a749fa5d5"
 
-That's it!
 
 ![BYAC Dashboard](./public/byac_dashboard.png)
 
