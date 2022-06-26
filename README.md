@@ -35,14 +35,3 @@ To get this working with GitHub pages, do the following:
 
 3. Under the `Settings` tab, select the `Pages` menu item and copy the URL where your site is published. 
 
-![GitHub Pages Setting](./public/github_pages_setting.png)
-
-4. Make sure you are on the `main` branch and open up `package.json`. Update the URL next to the `"homepage"` field using the URL where your site is being published. Commit your changes.
-
-![package.json Setting](./public/package_json_setting.png)
-
-5. 
-
-Commit your changes. Your custom desktop should be live at your published URL in just a couple minutes. You can check the `Actions` tab in your GitHub repo to confirm that your dashboard has finished deploying. 
-
-![BYAC Dashboard](./public/byac_dashboard.png)
