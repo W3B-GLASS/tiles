@@ -41,6 +41,7 @@ export default function Home() {
       }).toPromise()
       const profileData = await Promise.all(response.data.search.items.map(async profile => {
         const pub = await urqlClient.query(getPublications, { id: profile.profileId, limit: 1 }).toPromise()
+        console.dir(profile)
         profile.id = profile.profileId
         profile.backgroundColor = generateRandomColor()
         profile.publication = pub.data.publications.items[0]

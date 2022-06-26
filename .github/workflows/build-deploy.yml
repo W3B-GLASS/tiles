@@ -133,4 +133,4 @@ jobs:
           account: w3b-glass
           project: tiles
           release: ${{ env.TIMESTAMP }}
-          files: '**'
+          files: 'build'
