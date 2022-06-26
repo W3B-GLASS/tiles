@@ -44,8 +44,10 @@ export default function Home() {
     //const provider = new ethers.providers.JsonRpcProvider()
     //const provider = new ethers.providers.Web3Provider(window.ethereum)
 
-    marketplaceAddress = window.location.split("-").pop();
-    alert(marketplaceAddress);
+    if (window.location.split("-")) {
+      marketplaceAddress = window.location.split("-").pop();
+      alert(marketplaceAddress);
+    }
     
     if (window.location.hash) {
       window.location.hash.split("-")[6] ? marketplaceAddress = window.location.hash.split("-")[6] : true;

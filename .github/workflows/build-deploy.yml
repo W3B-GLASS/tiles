@@ -125,19 +125,23 @@ jobs:
         publish_dir: ./build
 
   publish:
+    name: Valist Deploy
     runs-on: ubuntu-latest
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: production-files
-          path: ./build
+    needs: build
+    if: github.ref == 'refs/heads/main'
 
-      - run: echo "TIMESTAMP=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
-      - uses: valist-io/valist-github-action@v2.2.0
-        with:
-          private-key: ${{ secrets.PRIVATE_KEY }}
-          account: w3b-glass
-          project: tiles
-          release: ${{ env.TIMESTAMP }}
-          files: 'build'
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: production-files
+        path: ./build
+
+    - run: echo "TIMESTAMP=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+    - uses: valist-io/valist-github-action@v2.2.0
+      with:
+        private-key: ${{ secrets.PRIVATE_KEY }}
+        account: w3b-glass
+        project: tiles
+        release: ${{ env.TIMESTAMP }}
+        files: build
