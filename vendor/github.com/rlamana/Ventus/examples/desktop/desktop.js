@@ -164,7 +164,6 @@
 				//openWithDelay(playerWin, 600);
 				//aboutWin.minimize();
 				//terminalWin.minimize();
-				// April 21 2017 todoWin2.minimize();
 				//coinbaseWin.minimize();
 			});
 		}
@@ -177,7 +176,8 @@
 		    // desktop.js: Hello from onEnd tourEnded
 		    var Win;
                     console.log("desktop.js: Hello from " + event.data);
-                    console.dir("type of data "+ typeof event.data);
+                    console.log("type of data "+ typeof event.data);
+                    console.dir(typeof event.data);
 		    if (event.data instanceof ImageData) {
                         console.dir(event.data);
 			var iFrame = document.getElementById('sidebar');
@@ -273,15 +273,11 @@
 					$browserAlert.hide();
 
 					init();
-					// April 21 2017 setTimeout(checkCakeshop,30000);
-					// April 21 2017 setTimeout(checkBrowserver,3000);
 				});
 
 				$browserAlert.show();
 			} else {
 				init();
-				// April 21 2017 setTimeout(checkCakeshop,30000);
-				// April 21 2017 setTimeout(checkBrowserver,3000);
 			}
 		},  3000 );
 
