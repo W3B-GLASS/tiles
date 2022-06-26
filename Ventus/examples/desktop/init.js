@@ -2,8 +2,8 @@
 
 function doSomethingLater() {
 	const w3b_bio = "https://W3B-GLASS.github.io/tiles/marketplace/#Web3 Bio-Bios-Add A Bio-Your Bio Links-Dashboard-Bio-0xb745845A511fF4D328D534c59A6eBb547a57D9B0";
-	const lens_bio = "https://W3B-GLASS.github.io/tiles/lens-protocol-frontend/profiles"
-        document.getElementById("lens_bio").src = lens_bio;
+//	const lens_bio = "https://W3B-GLASS.github.io/tiles/lens-protocol-frontend/profiles"
+//        document.getElementById("lens_bio").src = lens_bio;
         document.getElementById("w3b_bio").src = w3b_bio;
 
 	const w3b_store = "https://W3B-GLASS.github.io/tiles/marketplace/#Web3 Stor3-Apps-Add An App-Your Apps-Dashboard-App-0x94F4a38726570f41693CD1aC9DefFab22AF819b4";
