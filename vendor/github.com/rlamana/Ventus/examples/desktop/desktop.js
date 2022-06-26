@@ -177,7 +177,7 @@
 		    var Win;
                     console.log("desktop.js: Hello from " + event.data);
                     console.log("type of data "+ typeof event.data);
-                    console.dir(typeof event.data);
+                    console.dir(event.data);
 		    if (event.data instanceof ImageData) {
                         console.dir(event.data);
 			var iFrame = document.getElementById('sidebar');
