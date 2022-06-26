@@ -1,7 +1,8 @@
 
 
 function doSomethingLater() {
-	const w3b_bio = "nft-dashboard-template/#Web3 Bio-Bios-Add A Bio-Your Bio Links-Dashboard-Bio-0xb745845A511fF4D328D534c59A6eBb547a57D9B0";
+	//const w3b_bio = "nft-dashboard-template/#Web3 Bio-Bios-Add A Bio-Your Bio Links-Dashboard-Bio-0xb745845A511fF4D328D534c59A6eBb547a57D9B0";
+	const w3b_bio = "lens-protocol-frontend/profiles"
         document.getElementById("w3b_bio").src = w3b_bio;
 
 	const w3b_store = "nft-dashboard-template/#Web3 Stor3-Apps-Add An App-Your Apps-Dashboard-App-0x94F4a38726570f41693CD1aC9DefFab22AF819b4";
