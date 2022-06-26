@@ -95,6 +95,7 @@ jobs:
         mv ./build/index.html ./build/covalent.html
         sed -i "s+nft-dashboard-template+https://${GITHUB_REPOSITORY_OWNER}.github.io/$(basename `git rev-parse --show-toplevel`)/+g" ./build/glass.html
         sed -i "s+nft-dashboard-template+https://${GITHUB_REPOSITORY_OWNER}.github.io/$(basename `git rev-parse --show-toplevel`)/marketplace+g" ./build/Ventus/examples/desktop/init.js
+        sed -i "s+BASE-HREF+https://${GITHUB_REPOSITORY_OWNER}.github.io/$(basename `git rev-parse --show-toplevel`)+g" ./build/Ventus/examples/desktop/init.js
         sed -i "s+lens-protocol-frontend+https://${GITHUB_REPOSITORY_OWNER}.github.io/$(basename `git rev-parse --show-toplevel`)/lens-protocol-frontend+g" ./build/Ventus/examples/desktop/init.js
         sed -i "s+BASE_HREF+https://${GITHUB_REPOSITORY_OWNER}.github.io/$(basename `git rev-parse --show-toplevel`)/Ventus/examples/desktop/+g" ./build/glass.html
         mv ./build/glass.html ./build/index.html

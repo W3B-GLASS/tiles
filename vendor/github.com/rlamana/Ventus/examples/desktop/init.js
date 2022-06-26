@@ -2,7 +2,7 @@
 
 function doSomethingLater() {
 	//const w3b_bio = "nft-dashboard-template/#Web3 Bio-Bios-Add A Bio-Your Bio Links-Dashboard-Bio-0xb745845A511fF4D328D534c59A6eBb547a57D9B0";
-	const w3b_bio = "nft-dashboard-template/bio.html";
+	const w3b_bio = "BASE-HREF/bio.html";
 	const lens_bio = "lens-protocol-frontend/profiles"
         document.getElementById("lens_bio").src = lens_bio;
         document.getElementById("w3b_bio").src = w3b_bio;
