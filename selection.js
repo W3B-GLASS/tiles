@@ -7,9 +7,13 @@ function clickAnchorTag(a) {
 }
 
 if (document.getElementById("title") && window.location.hash) {
-  console.log("Going to click button");
-  clickAnchorTag(document.getElementById("dashboard"));
-  setTimeout(clickAnchorTag,10000,document.getElementById("dashboard"));
+  console.log("Update header");
+  document.onselectionchange = function() {
+    console.log('New selection made');
+    let selection = document.getSelection();
+    console.log('selection is '+selection);
+    console.dir(selection);
+  };
   document.getElementById("title").innerText = decodeURI(window.location.hash.split("-")[0]).substring(1);
   document.getElementById("home").innerText = decodeURI(window.location.hash.split("-")[1]);
   document.getElementById("sell").innerText = decodeURI(window.location.hash.split("-")[2]);
