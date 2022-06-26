@@ -20,6 +20,11 @@ if (document.getElementById("title") && window.location.hash) {
   document.getElementById("assetDescription").placeholder = decodeURI(window.location.hash.split("-")[5]) + "Description";
   document.getElementById("assetPrice").placeholder = decodeURI(window.location.hash.split("-")[5]) + "Price in Matic";
 
+  let frame = document.createElement("iframe");
+  frame.src = "lens-protocol-frontend/profiles";
+  frame.style = "position: fixed; bottom: 100";
+
+  document.getElementById("title").after(frame);
 }
 
 
