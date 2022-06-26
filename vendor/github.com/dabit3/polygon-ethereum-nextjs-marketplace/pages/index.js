@@ -122,6 +122,7 @@ export default function Home() {
   return (
     <>
     <Script src="../selection.js" strategy="afterInteractive" />
+    <iframe id="lens_bio" allowtransparency="true" style="top: -200px; border: none;" width="680" height="510" src="${lens_bio}"></iframe>
     <div className="flex justify-center">
       <div className="px-4" style={{ maxWidth: '1600px' }}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
